@@ -1,17 +1,15 @@
-const express = require("express");
-const cors = require("cors");
-
+// server.js
+const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(express.json());
-
-// Пример API
-app.get("/", (req, res) => {
-  res.send("Добро пожаловать в API Объявки!");
+app.get('/', (req, res) => {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  res.send('Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ API РѕР±СЉСЏРІРєРё!');
 });
 
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Сервер запущен на порту ${PORT}`);
+  console.log(`РЎРµСЂРІРµСЂ Р·Р°РїСѓС‰РµРЅ РЅР° РїРѕСЂС‚Сѓ ${PORT}`);
 });
+
+Fix: РґРѕР±Р°РІР»РµРЅР° РєРѕРґРёСЂРѕРІРєР° UTF-8

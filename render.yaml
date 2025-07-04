@@ -4,6 +4,8 @@ services:
     env: docker
     plan: free
     autoDeploy: true
+    buildCommand: ""
+    startCommand: ""
     envVars:
       - key: ConnectionStrings__DefaultConnection
         fromDatabase:

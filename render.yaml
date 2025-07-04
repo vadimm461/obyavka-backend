@@ -3,7 +3,14 @@ services:
     name: obyavka-backend
     env: docker
     plan: free
-    region: frankfurt
-    branch: main
-    dockerfilePath: ./Dockerfile
-    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: obyavka-db
+          property: connectionString
+
+databases:
+  - name: obyavka-db
+    plan: free
+    postgresMajorVersion: 15

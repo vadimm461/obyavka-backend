@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using WebApp.Data;
-using WebApp.Models; // ✅ подключаем ApplicationUser
+using WebApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,13 +34,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
-app.MapControllers(); // ✅ нужно для API: /api/account/register, /login
+app.MapControllers();
 
 app.Run();

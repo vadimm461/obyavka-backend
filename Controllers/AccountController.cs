@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using WebApp.Models;
 using WebApp.DTOs;
+using System.Threading.Tasks;
 
 namespace WebApp.Controllers;
 
@@ -32,10 +33,7 @@ public class AccountController : ControllerBase
             return Ok();
         }
 
-        foreach (var error in result.Errors)
-            ModelState.AddModelError(string.Empty, error.Description);
-
-        return BadRequest(new { message = "Ошибка регистрации", errors = result.Errors });
+        return BadRequest(result.Errors);
     }
 
     [HttpPost("login")]

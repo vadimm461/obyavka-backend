@@ -1,14 +1,8 @@
-using System.ComponentModel.DataAnnotations;
-
-namespace WebApp.DTOs;
-
-public class RegisterDto
+namespace WebApp.DTOs
 {
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; }
-
-    [Required]
-    [MinLength(6)]
-    public string Password { get; set; }
+    public class RegisterDto
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
 }

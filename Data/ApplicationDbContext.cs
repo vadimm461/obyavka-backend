@@ -10,7 +10,5 @@ namespace WebApp.Data
             : base(options)
         {
         }
-
-        // Добавь сюда свои DbSet<Модель> при необходимости
     }
 }
